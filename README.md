@@ -9,6 +9,8 @@ Video: https://www.youtube.com/watch?v=PVSvkN2WdAw
 
 Pixalive is a free, multi-user, real-time editor for animated sprites and pixel art. To invite friends to collaborate with you, simply send them the URL to your sprite. All changes are automatically saved and sent to all collaborators.
 
+NOTE: db serialization of sprites is not currently supported due to postgres issues with the fly.io host; all sprites will be cleared when the last user leaves a shared session.
+
 ## Code highlights
 Namespace-enabled socket IO server: https://github.com/pixalive/pixalive/blob/master/server/pixalive.js
 Drawing & multi-user undo, server-side: https://github.com/pixalive/pixalive/blob/master/server/eventHandlers/canvasClick.js, https://github.com/pixalive/pixalive/blob/master/server/eventHandlers/undo.js
