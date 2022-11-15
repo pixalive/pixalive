@@ -5,43 +5,50 @@ const chalk = require('chalk');
 const Sequelize = require('sequelize')
 const moment = require('moment')
 
-const dt = new Date(); 
+const dt = new Date();
 dt.setMonth(dt.getMonth()-1)
 
 
 let loadData = async spriteHash => {
   try{
-    let oldAssLayers = await Layers.destroy({
-      where: {
-        updatedAt: {
-          [Sequelize.Op.lte]: dt
-        }
-      }
-    })
-    let oldAssFrames = await Frames.destroy({
-      where: {
-        updatedAt: {
-          [Sequelize.Op.lte]: dt
-        }
-      }
-    })
-    let oldAssSprite = await Sprites.destroy({
-      where: {
-        updatedAt: {
-          [Sequelize.Op.lte]: dt
-        }
-      }
-    })
-    console.log(oldAssSprite, oldAssFrames, oldAssLayers)
+    /**
+     * PERSISTENCE TEMPORARILY DISABLED
+     */
+    // let oldAssLayers = await Layers.destroy({
+    //   where: {
+    //     updatedAt: {
+    //       [Sequelize.Op.lte]: dt
+    //     }
+    //   }
+    // })
+    // let oldAssFrames = await Frames.destroy({
+    //   where: {
+    //     updatedAt: {
+    //       [Sequelize.Op.lte]: dt
+    //     }
+    //   }
+    // })
+    // let oldAssSprite = await Sprites.destroy({
+    //   where: {
+    //     updatedAt: {
+    //       [Sequelize.Op.lte]: dt
+    //     }
+    //   }
+    // })
+    // console.log(oldAssSprite, oldAssFrames, oldAssLayers)
   } catch(error){
     console.log(error)
   }
 
   try {
-    let loadedSprite = await Sprites.findOne({
-      where: { hash: spriteHash },
-      raw: true
-    });
+        /**
+     * PERSISTENCE TEMPORARILY DISABLED
+     */
+    // let loadedSprite = await Sprites.findOne({
+    //   where: { hash: spriteHash },
+    //   raw: true
+    // });
+    let loadedSprite = undefined;
 
     let newState = {};
 
